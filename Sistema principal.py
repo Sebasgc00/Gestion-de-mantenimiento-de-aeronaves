@@ -100,3 +100,55 @@ if __name__ == "__main__":
     Mantenimiento_6.status()
     print()
 
+class tecnico:
+    def __init__(self, id, nombre, especialidad, ciudad):
+        self.id = id
+        self.especialidad = especialidad
+        self.ciudad = ciudad
+        self.nombre = nombre
+
+    def status(self):
+        print(f"id: {self.id}")
+        print(f"Nombre: {self.nombre}")
+        print(f"Especialidad: {self.especialidad}")
+        print(f"Ciudad: {self.ciudad}")
+
+tecnico_1 = tecnico("75890345", "Joaquin","General", "Bogota")
+tecnico_2 = tecnico("45632876", "Andres", "General", "Medellin")
+tecnico_3 = tecnico("85740328", "Sofia", "Instrumentos", "Bogota")
+tecnico_4 = tecnico("46328769", "Richard", "Instrumentos", "Medellin")
+tecnico_5 = tecnico("47509779", "Sara", "Sensor de temperatura de aire", "Bogota")
+tecnico_6 = tecnico("34572615", "Isabella", "Sensor de temperatura de aire", "Medellin")
+tecnico_7 = tecnico("45087569", "Clara", "Sistema de aire acondicionado", "Bogota")
+tecnico_8 = tecnico("1016593778", "Brandon Viejoski Enriquez", "Sistema de aire acondicionado", "Medellin")
+tecnico_9 = tecnico("47507920", "Carlos", "Sistema Hidraulico", "Bogota")
+tecnico_10 = tecnico("07896728", "Lizdi", "Sistema hidraulico", "Medellin")
+tecnico_11 = tecnico("69574029", "Valeria", "Motor", "Bogota")
+tecnico_12 = tecnico("03402840", "Hugo", "Motor", "Medellin")
+
+if __name__ == "__main__":
+    print("TÉCNICOS")
+    tecnico_1.status()
+    print()
+    tecnico_2.status()
+    print()
+    tecnico_3.status()
+    print()
+    tecnico_4.status()
+    print()
+    tecnico_5.status()
+    print()
+    tecnico_6.status()
+    print()
+    tecnico_7.status()
+    print()
+    tecnico_8.status()
+    print()
+    tecnico_9.status()
+    print()
+    tecnico_10.status()
+    print()
+    tecnico_11.status()
+    print()
+    tecnico_12.status()
+    print()
