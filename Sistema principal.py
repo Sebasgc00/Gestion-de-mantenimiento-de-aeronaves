@@ -152,3 +152,21 @@ if __name__ == "__main__":
     print()
     tecnico_12.status()
     print()
+
+class hangar:
+    def __init__(self, ubicacion, disponibilidad):
+        self.ubicacion = ubicacion
+        self.disponibilidad = disponibilidad
+
+    def status(self):
+        print(f"Ubicacion: {self.ubicacion}")
+        print(f"Disponibilidad: {self.disponibilidad}")
+
+if __name__ == "__main__":
+    print("HANGARES")
+    hangar_bog = hangar("Bogota", rnd.choice(["Ocupado", "Desocupado"]))
+    hangar_mde = hangar("Medellin", rnd.choice(["Ocupado", "Desocupado"]))
+    hangar_bog.status()
+    print()
+    hangar_mde.status()
+    print()
