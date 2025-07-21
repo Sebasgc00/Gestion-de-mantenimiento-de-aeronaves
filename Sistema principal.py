@@ -40,3 +40,33 @@ if __name__ == "__main__":
     print()
     Avion_5.status()
     print()
+
+class falla:
+    # Simula si una aeronave tuvo una falla reciente
+    def __init__(self, descripcion, gravedad):
+        self.descripcion = descripcion
+        self.gravedad = gravedad # La gravedad puede ser: leve, medio o critico
+
+    def status(self):
+        print(f"Descripcion: {self.descripcion}")
+        print(f"Gravedad: {self.gravedad}")
+
+Falla_1 = falla("Instrumentos defectuosos", "Leve")
+Falla_2 = falla("Falla del sensor de temperatura de aire", "Media")
+Falla_3 = falla("Falla en aire acondicionado", "Media")
+Falla_4 = falla("Perdida del sistema hidraulico", "Critica")
+Falla_5 = falla("Falla total del motor", "Critica")
+
+if __name__ == "__main__":
+    print("FALLAS")
+    Falla_1.status()
+    print()
+    Falla_2.status()
+    print()
+    Falla_3.status()
+    print()
+    Falla_4.status()
+    print()
+    Falla_5.status()
+    print()
+
