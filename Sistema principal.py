@@ -227,3 +227,42 @@ for avion in aviones:
             print("No hay hangares disponibles")
 
         print("-" * 50)
+
+if __name__ == "__main__":
+    # Lista de aviones 
+    aviones = [Avion_1, Avion_2, Avion_3, Avion_4, Avion_5]
+
+print("Mantenimiento por horras o ciclos de vuelo\n")
+
+for avion in aviones:
+    print(f"Aeronave {avion.matricula} - {avion.modelo}")
+    print(f"Horas de vuelo: {avion.vhoras} / Ciclos de vuelo: {avion.vciclos}")
+
+    if avion.vhoras >= 300 or avion.vciclos >= 600:
+        print("Requiere mantenimiento general")
+
+        # Filtrar hangares desocupados
+        hangares_disponibles = [h for h in hangares if h.disponibilidad == "Desocupado"]
+
+        if hangares_disponibles:
+            # Elegir uno aleatorio si hay más de uno
+            hangar_asignado = rnd.choice(hangares_disponibles)
+            print(f"Enviando al hangar en {hangar_asignado.ubicacion}")
+
+            # Buscar técnico de mantenimiento general en esa ciudad
+            tecnico_general = None
+            for t in tecnicos:
+                if t.especialidad == "General" and t.ciudad == hangar_asignado.ubicacion:
+                    tecnico_general = t
+                    break
+
+            if tecnico_general:
+                print(f"Técnico asignado: {tecnico_general.nombre}")
+        else:
+            print("No hay hangares disponibles")
+    elif 250 <= avion.vhoras < 300 or 500 <= avion.vciclos < 600:
+        print("La aeronave está próxima a requerir mantenimiento general")
+    else:
+        print("La aeronave no necesita mantenimiento por horas ni ciclos")
+
+    print("-" * 50)
