@@ -170,3 +170,60 @@ if __name__ == "__main__":
     print()
     hangar_mde.status()
     print()
+
+if __name__ == "__main__":
+    # Lista de aviones y fallas
+    aviones = [Avion_1, Avion_2, Avion_3, Avion_4, Avion_5]
+    fallas = [Falla_1, Falla_2, Falla_3, Falla_4, Falla_5]
+    tecnicos = [tecnico_1, tecnico_2, tecnico_3, tecnico_4, tecnico_5, tecnico_6,
+                tecnico_7, tecnico_8, tecnico_9, tecnico_10, tecnico_11, tecnico_12]
+
+# Hangares
+    hangares = [hangar_bog, hangar_mde]
+
+    print("Mantenimiento por fallas inesperadas\n")
+
+especialidades = {
+        "Instrumentos defectuosos": "Instrumentos",
+        "Falla del sensor de temperatura de aire": "Sensor de temperatura de aire",
+        "Falla en aire acondicionado": "Sistema de aire acondicionado",
+        "Perdida del sistema hidraulico": "Sistema hidraulico",
+        "Falla total del motor": "Motor"
+    }
+
+for avion in aviones:
+        falla_inesperada = rnd.choice(fallas)
+        print(f"La aeronave {avion.matricula} - {avion.modelo} tuvo una falla inesperada")
+        print(f"Falla: {falla_inesperada.descripcion} de gravedad {falla_inesperada.gravedad}")
+
+        # Evaluar estado operativo
+        if falla_inesperada.gravedad.lower() == "critica":
+            print("Estado del avion: No operativo")
+        else:
+            print("Estado del avion: Operativo pero requiere revisión inmediata")
+
+        # Buscar hangar disponible
+        hangar_disponible = None
+        for h in hangares:
+            if h.disponibilidad == "Desocupado":
+                hangar_disponible = h
+                break
+
+        if hangar_disponible:
+            print(f"Enviando al hangar en {hangar_disponible.ubicacion}")
+
+            especialidad_requerida = especialidades.get(falla_inesperada.descripcion, None)
+
+            if especialidad_requerida:
+                tecnico_encontrado = None
+                for t in tecnicos:
+                    if (t.especialidad == especialidad_requerida) and (t.ciudad in hangar_disponible.ubicacion):
+                        tecnico_encontrado = t
+                        break
+
+                if tecnico_encontrado:
+                    print(f"Técnico asignado: {tecnico_encontrado.nombre}")
+        else:
+            print("No hay hangares disponibles")
+
+        print("-" * 50)
