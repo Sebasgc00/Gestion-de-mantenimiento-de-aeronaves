@@ -70,3 +70,32 @@ if __name__ == "__main__":
     Falla_5.status()
     print()
 
+class mantenimiento:
+    # Simula los mantenimientos hechos a las aeronaves
+    def __init__(self, tipo):
+        self.tipo = tipo # el tipo puede ser: programado o no programado
+
+    def status(self):
+        print(f"Tipo: {self.tipo}")
+
+Mantenimiento_1 = mantenimiento("General")
+Mantenimiento_2 = mantenimiento("Instrumentos")
+Mantenimiento_3 = mantenimiento("Sensor de temperatura de aire")
+Mantenimiento_4 = mantenimiento("Sistema de aire acondicionado")
+Mantenimiento_5 = mantenimiento("Sistema hidraulico")
+Mantenimiento_6 = mantenimiento("Motores")
+
+if __name__ == "__main__":
+    print("MANTENIMIENTOS")
+    Mantenimiento_1.status()
+    print()
+    Mantenimiento_2.status()
+    print()
+    Mantenimiento_3.status()
+    print()
+    Mantenimiento_4.status()
+    print()
+    Mantenimiento_5.status()
+    print()
+    Mantenimiento_6.status()
+    print()
